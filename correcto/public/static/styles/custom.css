@@ -1,0 +1,441 @@
+@charset "UTF-8";
+
+:root{
+    --secondary: #A41D22 !important;
+}
+
+@media (max-width: 404px){
+    h1{
+        font-size: 2rem !important;
+    }
+    h2 {
+        font-size: 1.8rem  !important; 
+    }
+}
+@media(min-width: 0px) and (max-width: 582px){
+    :root{
+        --app-bar-height: 56px;
+    }
+    #app-bar{
+        height: var(--app-bar-height) !important;
+    }
+    #home, #page-content{
+        height: calc(100vh - var(--app-bar-height)) !important;
+    }
+    #page-content{
+        top: var(--app-bar-height) !important;
+    }
+}
+@media(min-width: 583px) and (max-width: 599px){
+    :root{
+        --app-bar-height: 48px;
+    }
+    #app-bar{
+        height: var(--app-bar-height) !important;
+    }
+    #home, #page-content{
+        height: calc(100vh - var(--app-bar-height)) !important;
+    }
+    #page-content{
+        top: var(--app-bar-height) !important;
+    }
+}
+@media(min-width: 600px){
+    :root{
+        --app-bar-height: 64px;
+    }
+    #app-bar{
+        height: var(--app-bar-height) !important;
+    }
+    #home, #page-content{
+        height: calc(100vh - var(--app-bar-height)) !important;
+    }
+    #page-content{
+        top: var(--app-bar-height) !important;
+    }
+}
+
+
+
+body{
+    width: 100vw;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif !important;
+}
+.relative{
+    position: relative !important;
+}
+#nav-desktop{
+    display: inline-flex;
+    list-style: none;
+}
+#mobile-nav-app-bar #mobile-nav-control button{
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+#mobile-nav-app-bar #mobile-nav-control .navbar-toggler{
+    font-size: 1.5rem;
+}
+.nav-a{
+    text-decoration: none !important;
+    color: unset;
+}
+#mobile-nav-content{
+    width: 80vw;
+    height: calc(100vh - 69px);
+    position: absolute;
+    top: 69px;
+    left: 0;
+    z-index: 2;
+    --animate-duration: 0.4s;
+}
+#home{
+    width: 100vw;
+    position: relative;
+}
+#home #hero-bg{
+    width: 100%;
+    height: 100%;
+    filter: brightness(0.8);
+}
+#home #hero-content{
+    position: absolute;
+    z-index: 2;
+}
+#home #hero-content h1{
+    font-weight: 700;
+}
+#home #hero-content p{
+    font-weight: 500;
+}
+.bg-primary{
+    background-color: #076cb1 !important;
+}
+
+.btn-secondary {
+    color: #fff;
+    background-color: #A41D22;
+    border-color: #A41D22;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075); }
+.btn-secondary:hover {
+    color: #fff;
+    background-color: #83171b;
+    border-color: #791519; }
+.btn-secondary:focus, .btn-secondary.focus {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 0.2rem rgba(178, 63, 67, 0.5); }
+.btn-secondary.disabled, .btn-secondary:disabled {
+    color: #fff;
+    background-color: #A41D22;
+    border-color: #A41D22; }
+.btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active,
+.show > .btn-secondary.dropdown-toggle {
+    color: #fff;
+    background-color: #791519;
+    border-color: #6e1317; }
+.btn-secondary:not(:disabled):not(.disabled):active:focus, .btn-secondary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-secondary.dropdown-toggle:focus {
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125), 0 0 0 0.2rem rgba(178, 63, 67, 0.5); }
+button:focus{
+    outline: none !important;}
+
+#page-content{
+    scroll-behavior: smooth;
+    position: absolute;
+    width: 100%;
+    overflow-x: hidden;
+}
+@media(min-width: 200px) and (max-width: 280px){
+    #quem-somos .img-container{
+        width: 180px;
+        height: 180px;
+    }
+}
+@media(min-width: 281px ) and (max-width: 575px){
+    #quem-somos .img-container{
+        min-width: 200px ;
+        min-height: 200px;
+        max-height: 280px;
+        max-width: 280px;
+    }
+}
+@media(min-width: 576px) and (max-width: 767px){
+    #quem-somos .img-container{
+        min-width: 240px;
+        min-height: 240px;
+    }
+}
+@media(min-width: 768px){
+    #quem-somos .img-container{
+        max-width: 280px;
+        max-height: 280px;
+    }
+}
+
+#onde-estamos .img-container, #map{
+    width: 100% !important
+ }
+
+@media(max-width: 320px){
+    #onde-estamos .img-container, #map{
+        height: 230px;
+    }
+}
+@media(min-width: 321px) and (max-width: 477px){
+    #onde-estamos .img-container, #map{
+        height: 270px ;
+     } 
+}
+@media(min-width: 478px) and (max-width: 529px){
+    #onde-estamos .img-container, #map{
+        height: 300px ;
+     } 
+}
+
+@media(min-width: 530px) and (max-width: 767px){
+    #onde-estamos .img-container, #map{
+        height: 320px ;
+     }
+}
+@media (min-width: 768px){
+
+    #onde-estamos .img-container, #map{
+        height: 224px !important;
+     }
+}
+
+@media (min-width: 992px){
+
+    #onde-estamos .img-container, #map{
+        height: 300px !important;
+     }
+}
+@media (min-width: 1200px){
+
+    #onde-estamos .img-container, #map{
+        height: 320px !important;
+     }
+}
+
+.img-outer{
+    width: 100%;
+    height: 100%;
+}
+
+.card-text-box {
+    overflow: hidden;
+    display: -webkit-box !important;
+    word-break: break-all;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    text-overflow: ellipsis;
+}
+.card-img-top{
+    background: linear-gradient(0deg, rgba(196,194,194,1) 0%, rgba(143,143,143,1) 50%, rgba(196,194,194,1) 100%);
+    width: 100% !important;
+    height: 180px; 
+}
+
+@media (min-width: 420px) and (max-width: 767px){
+    .card-img-top{
+        height: 250px !important;
+    }
+}
+@media (min-width: 768px){
+    .card-img-top{
+        width: 100% !important;
+        height: 180px; 
+    }
+}
+@media (min-width: 1100px){
+    .card-img-top{
+        height: 235px;
+    }
+}
+@media (min-width: 1200px){
+    .card-img-top{
+        height: 250px;
+    }
+}
+#partners-box{
+    overflow: hidden;
+}
+#partners-box #partners-box-content{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    max-width: 90%;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+/*
+.glider-slide{
+    display: inline-block;
+    justify-content: unset;
+    padding: 8px;
+    min-width: unset !important;
+    max-width: unset !important;
+}
+
+.glider.draggable::-webkit-scrollbar {
+    display: none;
+}
+
+.glider-dots {
+    user-select: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+  }
+.glider-dot {
+    border: 0;
+    padding: 0;
+    user-select: none;
+    outline: none;
+    display: block;
+    cursor: pointer;
+    color: #ccc;
+    border-radius: 999px;
+    background: #ccc;
+    width: 12px;
+    height: 12px;
+    margin: 7px;
+  }
+.glider-dot:hover,.glider-dot:focus, .glider-dot.active {
+    background: #a89cc8;
+  }
+*/
+@media(min-width: 320px) and (max-width: 575px){
+/*
+    .glider-slide{
+        width: 150px !important;
+        height: 150px !important;
+    }
+    */
+}
+
+@media(min-width: 576px){
+    /*
+    .glider-track{
+        display: inline-flex;
+    }
+    */
+}
+
+@media(min-width: 576px) and (max-width: 799px){
+    /*
+    .glider-slide{
+        width: 165px !important;
+        height: 165px !important;
+    }
+    */
+}
+@media(min-width: 800px){
+    /*
+    .glider-slide{
+        display: unset;
+        justify-content: unset;
+        width: 130px !important;
+        height: 130px !important;
+    }
+    */
+}
+
+@media(min-width: 992px){ 
+    /*Quando a viewport possuir esta medida, significa que não será mais necessário exibir os itens em formato de slide.
+     e por isso não será aplicado nenHum display ao item, bem como a centralização.
+     Sendo os slides desnecerários, as navegações pelos botões "dots" também serão.
+     */
+     /*
+    .glider-slide{
+        width: 150px !important;
+        height: 150px !important;
+    }
+    .glider-track{
+        display: flex;
+        justify-content: center;
+    }
+    .dots{
+        display: none !important;
+    }
+    */
+}
+
+#fale-conosco{
+    height: 100vh;
+}
+
+ #quem-somos .img-container > span, .glider .img-container > span{
+    display: unset  !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+ #quem-somos .img-container > span > span, .glider .img-container > span > span{
+    position:unset !important;
+    display: unset !important;
+}
+
+#quem-somos .img-container img, .glider .img-container img{
+    max-width: unset !important;
+    min-width: unset !important;
+    max-height: unset !important;
+    min-height: unset !important;
+    /* width: 100% !important;
+    height: 100% !important; */
+    position: unset !important;
+}
+
+@media(max-width: 575px) { 
+    :root{
+        --glider-track-height: 300px;
+    }
+    .glider-track{
+        height: var(--glider-track-height);
+    }
+    .glider-slide img{
+        width: 150px !important;
+        height: 150px !important;
+    }
+
+}
+@media(min-width: 576px) and (max-width: 799px){
+    .glider-track{
+        display: inline-flex;
+    }
+    .glider-slide img{
+        width: 165px !important;
+        height: 165px !important;
+    }
+}
+@media(min-width: 800px){
+    .glider-slide img{
+        display: unset;
+        justify-content: unset;
+        width: 130px !important;
+        height: 130px !important; 
+    }
+}
+@media(min-width: 992px){ 
+    /*Quando a viewport possuir esta medida, significa que não será mais necessário exibir os itens em formato de slide.
+     e por isso não será aplicado nenHum display ao item, bem como a centralização.
+     Sendo os slides desnecerários, as navegações pelos botões "dots" também serão.
+     */
+    .glider-slide img{
+        width: 150px !important;
+        height: 150px !important;
+    }
+    .glider-track{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.glida-css{
+    width: 30px;
+    height: 30px;
+    background-color: turquoise;
+}
+
