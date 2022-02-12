@@ -164,6 +164,8 @@ button:focus{
     #quem-somos .img-container{
         min-width: 240px;
         min-height: 240px;
+        max-width: 285px;
+        max-height: 285px;
     }
 }
 @media(min-width: 768px){
@@ -269,105 +271,9 @@ button:focus{
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
-/*
-.glider-slide{
-    display: inline-block;
-    justify-content: unset;
-    padding: 8px;
-    min-width: unset !important;
-    max-width: unset !important;
-}
-
-.glider.draggable::-webkit-scrollbar {
-    display: none;
-}
-
-.glider-dots {
-    user-select: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 auto;
-    padding: 0;
-  }
-.glider-dot {
-    border: 0;
-    padding: 0;
-    user-select: none;
-    outline: none;
-    display: block;
-    cursor: pointer;
-    color: #ccc;
-    border-radius: 999px;
-    background: #ccc;
-    width: 12px;
-    height: 12px;
-    margin: 7px;
-  }
-.glider-dot:hover,.glider-dot:focus, .glider-dot.active {
-    background: #a89cc8;
-  }
-*/
-@media(min-width: 320px) and (max-width: 575px){
-/*
-    .glider-slide{
-        width: 150px !important;
-        height: 150px !important;
-    }
-    */
-}
-
-@media(min-width: 576px){
-    /*
-    .glider-track{
-        display: inline-flex;
-    }
-    */
-}
-
-@media(min-width: 576px) and (max-width: 799px){
-    /*
-    .glider-slide{
-        width: 165px !important;
-        height: 165px !important;
-    }
-    */
-}
-@media(min-width: 800px){
-    /*
-    .glider-slide{
-        display: unset;
-        justify-content: unset;
-        width: 130px !important;
-        height: 130px !important;
-    }
-    */
-}
-
-@media(min-width: 992px){ 
-    /*Quando a viewport possuir esta medida, significa que não será mais necessário exibir os itens em formato de slide.
-     e por isso não será aplicado nenHum display ao item, bem como a centralização.
-     Sendo os slides desnecerários, as navegações pelos botões "dots" também serão.
-     */
-     /*
-    .glider-slide{
-        width: 150px !important;
-        height: 150px !important;
-    }
-    .glider-track{
-        display: flex;
-        justify-content: center;
-    }
-    .dots{
-        display: none !important;
-    }
-    */
-}
-
 #fale-conosco{
     height: 100vh;
 }
-
  #quem-somos .img-container > span, .glider .img-container > span{
     display: unset  !important;
     width: 100% !important;
@@ -377,14 +283,16 @@ button:focus{
     position:unset !important;
     display: unset !important;
 }
+#quem-somos .img-container img{
+    width: 100% !important;
+    height: 100% !important; 
+}
 
 #quem-somos .img-container img, .glider .img-container img{
     max-width: unset !important;
     min-width: unset !important;
     max-height: unset !important;
     min-height: unset !important;
-    /* width: 100% !important;
-    height: 100% !important; */
     position: unset !important;
 }
 
