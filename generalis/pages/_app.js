@@ -29,6 +29,13 @@ function MyApp({ Component, pageProps }) {
       route: 'fale-conosco'
     }
   ]
+  const especialidades = [
+    {id: "infancia-e-juventude", name: "Varas de infância e juventude", icon: "fa-solid fa-child" , description: "Lorem lipsum dolor sit amet"},
+    {id: "fazenda-publica", name: "Varas da Fazenda Pública", icon: "fa-solid fa-coins" , description: "Lorem lipsum dolor sit amet"},
+    {id: "civeis", name: "Varas cíveis", icon: "fa-solid fa-user-large" , description: "Lorem lipsum dolor sit amet"},
+    {id: "famila", name: "Varas de família", icon: "fa-solid fa-users" , description: "Lorem lipsum dolor sit amet"},
+    {id: "criminais", name: "Varas criminais", icon: "fa-solid fa-user-secret" , description: "Lorem lipsum dolor sit amet"},
+  ]
   const logo = {
     pic: logoPic,
     alt: 'Almeida e Falconi logo'
@@ -42,7 +49,7 @@ function MyApp({ Component, pageProps }) {
       <CustomHead />
       <Menu mainContentIsLoaded={mainContentIsLoaded} logo={logo} menuItems={menuEntries} mobileModeEnabled={widthMatch} />
       <main id="page-content" className="relative w-100">
-        <Component setMainContentAsLoaded={setMainContentAsLoaded} {...pageProps} />
+        <Component setMainContentAsLoaded={setMainContentAsLoaded} {...pageProps} especialidades={especialidades} />
       </main>
     </>
   )

@@ -1,40 +1,186 @@
 @charset "UTF-8";
-
-body{
-    width: 100vw;
-    overflow-x: hidden;
-    font-family: 'Montserrat', sans-serif !important;
-}
-.relative{
-    position: relative !important;
-}
-.hide{
-    display: none !important;
-}
-button:focus{
-    outline: none !important;
+:root{
+    --body-width: 100vw;
+    --body-height: 100vh;
 }
 
-#hero img{
-    filter: brightness(0.87);
-}
-#hero #hero-content{
-    position: relative;
-    filter: drop-shadow(0 0 0.75rem black);
-}
-#hero #hero-content h1{
-    font-weight: 700;
-}
-#hero #hero-content p{
-    font-weight: 500;
-}
 
-@media (max-width: 404px){
-    h1{
-        font-size: 2rem !important;
+@media(min-width: 992px){
+    :root{
+        --logo-outer-width: 16.2rem;
+        --app-bar-height: 80px;
     }
-    h2 {
-        font-size: 1.8rem  !important; 
+    .navbar-logo .logo-outer{
+        width: var(--logo-outer-width);
+        height: 3rem;
+    }
+}
+@media(min-width: 810px){
+    :root{
+        --logo-outer-width: 15.7rem;
+    }
+    .navbar-logo .logo-outer{
+        width: var(--logo-outer-width);
+    }
+}
+@media(min-width: 768px){
+    :root{
+        --logo-outer-width: 14.5rem;
+        --app-bar-height: 80px;
+    }
+    .navbar-logo .logo-outer{
+        width: var(--logo-outer-width);
+        height: 2.7rem;
+    }
+    #app-bar{
+        height: var(--app-bar-height) !important;
+    }
+    #sobre-nos-index .img-container-layout-fill,
+    #fale-conosco .img-container-layout-fill{
+        height: 330px;
+    }
+    #sobre-a-empresa .text-box-float-inner > div,
+    #fale-conosco .text-box-float-inner > div {
+        margin-top: 3rem;   
+    }
+    /*------------Página inicial-------------*/
+    #sobre-nos-index .img-container-layout-fill{
+        height: 100%;
+    }
+    #sobre-nos-index .text-box-float .text-box-float-inner{
+        padding-left: 3rem !important;
+        padding-right: 3rem !important;
+    }
+    #atuacao ul{
+        min-width: 86%;
+    }
+    #atuacao #list-content{
+        justify-content: end !important;
+    }
+    #atuacao #list-content .list-item-context{
+        justify-content: end;
+    }
+    /*--------------------------------------*/
+    /*---------Página quem somos------------*/
+    #sobre-a-empresa .section{
+        min-height: 470px;
+    }
+    /*------------------------------*/
+    #fale-conosco .text-box-float{
+        z-index: 2;
+        margin-top: -50px;
+        background-color: rgba(255, 255, 255, 0.6);
+    }  
+    /*---------Página Fale cononsco---------*/
+    #fale-conosco #contacts > div{
+        align-items: flex-end;
+    }  
+    /*------------------------------------*/
+    /*--------Página Nossos serviços-------*/
+    .professional-area{
+        max-width: 67%;
+    }
+    .professional-area .area-icon{
+        font-size: 4.5rem;
+    }
+    .professional-avatar .professional-pic{
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 100px
+    }
+    
+    /*------------------------------------*/
+}
+@media(max-width: 767px){
+    /*-------------Regras gerais---------------*/
+    .text-box-float .text-box-float-inner{
+        background-color: rgba(255, 255, 255, 0.6);
+        margin-left: 3rem !important;
+        margin-bottom: 80px;
+        margin-right: 3rem !important;
+        padding-right: 1rem!important;
+        padding-left: 1rem!important;
+    }
+    /*----------------------------------------*/
+    /*-----------Página inicial-----------------*/
+    #sobre-nos-index{
+        padding-left: 0px  !important;
+        padding-right: 0px  !important;
+    }
+    #sobre-nos-index .img-container-layout-fill,
+    #sobre-a-empresa .img-container-layout-fill,
+    #fale-conosco .img-container-layout-fill{
+        min-height: 220px;
+        max-height: 280px;
+    }    
+    #sobre-nos-index .description, .text-box-float{
+        order: 2;
+        position: relative;
+        z-index: 2;
+    }
+    #atuacao #list-content{
+        height: 400px !important;
+        justify-content: center !important;
+    }
+    #atuacao #list-content .list-item-context{
+        justify-content: center;
+    }
+    #atuacao ul, #atuacao #list-content .list-item-context{
+        min-width: 90%;
+    }
+    #sobre-nos-index .text-box-float-inner{
+        margin-top: -5rem;
+    }
+    #sobre-a-empresa .text-box-float-inner,
+    #fale-conosco .text-box-float-inner{
+        margin-top: -8rem;   
+    }
+    /*---------------------------------*/
+    /*-------Página Quem somos---------*/
+    #sobre-a-empresa #section-4 #map{
+        min-height: 450px;
+    }
+    /*------------------------------*/
+    /*---------Página Fale conosco---------*/
+    #fale-conosco .text-box-float-inner{
+        margin-bottom: 16rem;   
+    }
+    #fale-conosco #contacts > div{
+        align-items: center;
+    }  
+    /*-------------------------------------*/
+            /*--------Página Nossos serviços-------*/
+            .professional-area{
+                max-width: 100%;
+            }
+            .professional-area .area-icon{
+                font-size: 4.5rem;
+            }
+            .professional-pic-container{
+                position: relative;
+                z-index: 2;
+            }
+            .professional-avatar-pic-container > div{
+                width: 2.5rem;
+                height: 2.5rem;
+                border-radius: 100px;
+                position: relative;
+                margin-top: -16px;
+                margin-left: 50%;
+            }
+            
+            /*------------------------------------*/
+}
+@media(min-width: 600px){
+    :root{
+        --app-bar-height: 64px;
+    }
+    #app-bar{
+        height: var(--app-bar-height) !important;
+    }
+    #page-content, #hero{
+        height: calc(var(--body-height) - var(--app-bar-height)) !important;
+        top: var(--app-bar-height);
     }
 }
 @media(min-width: 0px) and (max-width: 599px){
@@ -48,37 +194,95 @@ button:focus{
         height: calc(100vh - var(--app-bar-height)) !important;
         top: var(--app-bar-height);
     }
-    /*
-    #page-content{
-        top: var(--app-bar-height) !important;
-    } */
 }
-@media(min-width: 583px) and (max-width: 599px){
-    /* :root{
-        --app-bar-height: 48px;
-    } */
-    /* #app-bar{
-        height: var(--app-bar-height) !important;
-    }
-    #home, #page-content{
-        height: calc(100vh - var(--app-bar-height)) !important;
-    }
-    #page-content{
-        top: var(--app-bar-height) !important;
-    } */
-}
-@media(min-width: 600px){
+@media(min-width: 576px) and (max-width: 767px){
     :root{
-        --app-bar-height: 64px;
+        --logo-outer-width: 14.1rem;
     }
-    #app-bar{
-        height: var(--app-bar-height) !important;
+    .navbar-logo .logo-outer{
+        width: var(--logo-outer-width);
+        height: 2.5rem;
     }
-    #page-content, #hero{
-        height: calc(100vh - var(--app-bar-height)) !important;
-        top: var(--app-bar-height);
+    .menu-btn{
+        width: calc(100% - var(--logo-outer-width)) !important;
+    }
 
+}
+@media(max-width: 575px){
+    /*---------Regras gerais-----*/
+    .text-box-float .text-box-float-inner{
+        background-color: rgba(255, 255, 255, 0.6);
+        margin-left: 1rem !important;
+        margin-right: 1rem !important;
+        padding-right: 1rem!important;
+        padding-left: 1rem!important;
     }
+    #sobre-a-empresa .text-box-float-inner,
+    #fale-conosco .text-box-float-inner{
+        margin-top: -12rem;
+    }
+    /*--------------------------------*/
+    /*---------Pagina inicial-----------*/
+    #sobre-nos-index .description > div {
+        margin-left: 1.2rem !important;
+        margin-right: 1.2rem !important;
+    }
+    #sobre-nos-index .text-box-float-inner{
+        margin-top: -9rem;
+    }
+    /*---------------------------*/
+}
+@media(min-width: 480px) and (max-width: 575px){
+    :root{
+        --logo-outer-width: 12.8rem;
+    }
+    .navbar-logo .logo-outer{
+        width: var(--logo-outer-width);
+        height: 2.4rem;
+    }
+    .menu-btn{
+        width: calc(100% - var(--logo-outer-width)) !important;
+    }
+}
+@media(max-width: 404px){
+    /* h1{
+        font-size: 2rem !important;
+    }
+    h2 {
+        font-size: 1.8rem  !important; 
+    } */
+}
+@media(min-width: 281px ) and (max-width: 479px){
+    :root{
+        --logo-outer-width: 10.2rem;
+    }
+    .navbar-logo .logo-outer{
+        width: var(--logo-outer-width);
+        height: 2.1rem;
+    }
+    .menu-btn{
+        width: calc(100% - var(--logo-outer-width)) !important;
+    }
+    
+}
+
+
+
+/*--------Regras gerais------------*/
+body{
+    width: var(--body-width);
+    height: var(--body-height);
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif !important;
+}
+.relative{
+    position: relative !important;
+}
+.hide{
+    display: none !important;
+}
+button:focus{
+    outline: none !important;
 }
 .nav-toolbar{
     height: 100% !important;
@@ -101,27 +305,6 @@ button:focus{
 #mobile-nav-app-bar #mobile-nav-control .navbar-toggler{
     font-size: 1.5rem;
 }
-
-.navbar-logo .logo-outer > span{
-    display: unset  !important;
-    width: 100% !important;
-    height: 100% !important;
-}
-.navbar-logo .logo-outer > span > span{
-    position:unset !important;
-    display: unset !important;
-}
-.navbar-logo .logo-outer img{
-    width: 100% !important;
-    height: 100% !important; 
-}
-.navbar-logo .logo-outer img{
-    max-width: unset !important;
-    min-width: unset !important;
-    max-height: unset !important;
-    min-height: unset !important;
-    position: unset !important;
-}
 .nav-a{
     text-decoration: none !important;
     color: unset;
@@ -135,65 +318,51 @@ button:focus{
     z-index: 2;
     --animate-duration: 0.4s;
 }
-
-@media(min-width: 768px){
-    #sobre-nos-index .img-container-layout-fill{
-        min-height: 400px;
-    }
-    #atuacao ul{
-        min-width: 80%;
-    }
-    #atuacao #list-content{
-        justify-content: end !important;
-    }
-    #atuacao #list-content .list-item-context{
-        justify-content: end;
-    }
+#hero img{
+    filter: brightness(0.87);
 }
-@media(max-width: 767px){
-    #sobre-nos-index{
-        padding-left: 0px  !important;
-        padding-right: 0px  !important;
-    }
-    #sobre-nos-index .img-container-layout-fill{
-        min-height: 220px;
-    }    
-    #sobre-nos-index .description{
-        order: 2;
-        position: relative;
-        z-index: 2;
-    }
-    #sobre-nos-index .description > div {
-        background-color: rgba(255, 255, 255, 0.6);
-        margin-top: -80px;
-        margin-left: 3rem !important;
-        margin-right: 3rem !important;
-        padding-right: 1rem!important;
-        padding-left: 1rem!important;
-    }
-    #atuacao #list-content{
-        height: 400px !important;
-        justify-content: center !important;
-    }
-    #atuacao #list-content .list-item-context{
-        justify-content: center;
-    }
-    #atuacao ul, #atuacao #list-content .list-item-context{
-        min-width: 90%;
-    }
+#hero #hero-content{
+    position: relative;
+    filter: drop-shadow(0 0 0.75rem black);
 }
-@media(max-width: 575px){
-    #sobre-nos-index .description > div {
-        margin-left: 1.2rem !important;
-        margin-right: 1.2rem !important;
-    }
+#hero #hero-content h1{
+    font-weight: 700;
 }
-
+#hero #hero-content p{
+    font-weight: 500;
+}
+.img-container-layout-fill img,
+.navbar-logo .logo-outer img {
+    width: 100% !important;
+    height: 100% !important; 
+}
+.img-container-layout-fill > span,
+.navbar-logo .logo-outer > span{
+    display: unset  !important;
+    width: 100% !important;
+    height: 100% !important;
+} 
+.img-container-layout-fill > span > span,
+.navbar-logo .logo-outer > span > span {
+    position:unset !important;
+    display: unset !important;
+} 
+.img-container-layout-fill img,
+.navbar-logo .logo-outer img {
+    max-width: unset !important;
+    min-width: unset !important;
+    max-height: unset !important;
+    min-height: unset !important;
+    position: unset !important;
+} 
+#new-section{
+    width: 100vw;
+    height: 100vh;    
+}
 #sobre-nos-index  i{
     width: 70px;
     height: 70px;
 }
-
 #atuacao .list-container{
     position: relative;
     z-index: 2;
@@ -218,264 +387,36 @@ button:focus{
 #atuacao #list-content .list-item-context i{
     font-size: 5rem !important;
 }
-
-
-
-/*-----Página quem-somos -----*/
-#sobre-a-empresa .img-container-layout-fill{
-    height: 300px !important;
-}
-#sobre-a-empresa .section-description .text-box-float .text-box-float-inner{
-    top: -90px !important
-}
-
-/*----------------------------*/
-
-
-
-
-/*--------Regras gerais------------*/
-.img-container-layout-fill img{
-    width: 100% !important;
+#sobre-a-empresa #img-1 > div, #fale-conosco #img-1 > div {
     height: 100% !important; 
 }
 
-#new-section{
-    width: 100vw;
-    height: 100vh;    
+/*-----Página quem-somos -----*/
+#sobre-a-empresa #section-3 i {
+    font-size: 7rem;
 }
-.img-container-layout-fill > span{
-    display: unset  !important;
-    width: 100% !important;
-    height: 100% !important;
-} 
-.img-container-layout-fill > span > span{
-    position:unset !important;
-    display: unset !important;
-} 
-.img-container-layout-fill img{
-    max-width: unset !important;
-    min-width: unset !important;
-    max-height: unset !important;
-    min-height: unset !important;
-    position: unset !important;
-} 
-
-.text-box-float{
-    position: relative;
-    z-index: 2;
+#sobre-a-empresa #section-4 #map{
+    height: 100%;
 }
+/*----------------------------*/
 
-.text-box-float-inner{
-    background-color: rgba(255, 255, 255, 0.6);
-    margin-top: -80px;
-    margin-left: 3rem !important;
-    margin-right: 3rem !important;
-    padding-right: 1rem!important;
-    padding-left: 1rem!important;
+/*--------Página Fale consosco---------*/
+#fale-conosco  #subject{
+    border-color: #ced4da;
+    border-radius: 5px;
+    outline: none;
 }
-
+.facebook-btn-logo{
+    color: rgb(96, 107, 255);
+}
+.whatsapp-btn-logo{
+    color: rgb(98, 177, 115)
+}
+.instagram-btn-logo{
+    color: rgb(229 121 121);
+}
 /*---------------------------------*/
 
 
-/*
-#page-content{
-    scroll-behavior: smooth;
-    position: absolute;
-    width: 100%;
-    overflow-x: hidden;
-} */
-@media(min-width: 200px) and (max-width: 280px){
-
-    /* #quem-somos .img-container-layout-fill{
-        width: 180px;
-        height: 180px;
-    } */
-}
-@media(min-width: 281px ) and (max-width: 479px){
-    :root{
-        --logo-outer-width: 10.2rem;
-    }
-    .navbar-logo .logo-outer{
-        width: var(--logo-outer-width);
-        height: 2.1rem;
-    }
-    .menu-btn{
-        width: calc(100% - var(--logo-outer-width)) !important;
-    }
-    /* #quem-somos .img-container-layout-fill{
-        min-width: 200px ;
-        min-height: 200px;
-        max-height: 280px;
-        max-width: 280px;
-    } */
-}
-@media(min-width: 480px) and (max-width: 575px){
-    :root{
-        --logo-outer-width: 12.8rem;
-    }
-    .navbar-logo .logo-outer{
-        width: var(--logo-outer-width);
-        height: 2.4rem;
-    }
-    .menu-btn{
-        width: calc(100% - var(--logo-outer-width)) !important;
-    }
-}
-@media(min-width: 576px) and (max-width: 767px){
-    :root{
-        --logo-outer-width: 14.1rem;
-    }
-    .navbar-logo .logo-outer{
-        width: var(--logo-outer-width);
-        height: 2.5rem;
-    }
-    .menu-btn{
-        width: calc(100% - var(--logo-outer-width)) !important;
-    }
-    /* #quem-somos .img-container-layout-fill{
-        min-width: 240px;
-        min-height: 240px;
-        max-width: 285px;
-        max-height: 285px;
-    } */
-}
-@media(min-width: 768px){
-    :root{
-        --logo-outer-width: 14.5rem;
-        --app-bar-height: 80px;
-    }
-    .navbar-logo .logo-outer{
-        width: var(--logo-outer-width);
-        height: 2.7rem;
-    }
-
-    #app-bar{
-        height: var(--app-bar-height) !important;
-    }
-    /* #quem-somos .img-container-layout-fill{
-        max-width: 280px;
-        max-height: 280px;
-    } */
-}
-@media(min-width: 810px){
-    :root{
-        --logo-outer-width: 15.7rem;
-    }
-    .navbar-logo .logo-outer{
-        width: var(--logo-outer-width);
-    }
-
-}
-@media(min-width: 992px){ 
-    :root{
-        --logo-outer-width: 16.2rem;
-        --app-bar-height: 80px;
-    }
-    .navbar-logo .logo-outer{
-        width: var(--logo-outer-width);
-        height: 3rem;
-    }
-    /*Quando a viewport possuir esta medida, significa que não será mais necessário exibir os itens em formato de slide.
-     e por isso não será aplicado nenHum display ao item, bem como a centralização.
-     Sendo os slides desnecerários, as navegações pelos botões "dots" também serão.
-     */
-    /* .glider-slide img{
-        width: 150px !important;
-        height: 150px !important;
-    }
-    .glider-track{
-        display: flex;
-        justify-content: center;
-    } */
-}
-
-/* 
-#onde-estamos .img-container-layout-fill, #map{
-    width: 100% !important
- } */
-
-/* @media(max-width: 320px){
-    #onde-estamos .img-container-layout-fill, #map{
-        height: 230px;
-    }
-}
-@media(min-width: 321px) and (max-width: 477px){
-    #onde-estamos .img-container-layout-fill, #map{
-        height: 270px ;
-     } 
-}
-@media(min-width: 478px) and (max-width: 529px){
-    #onde-estamos .img-container-layout-fill, #map{
-        height: 300px ;
-     } 
-}
-
-@media(min-width: 530px) and (max-width: 767px){
-    #onde-estamos .img-container-layout-fill, #map{
-        height: 320px ;
-     }
-}
-@media (min-width: 768px){
-
-    #onde-estamos .img-container-layout-fill, #map{
-        height: 224px !important;
-     }
-}
-
-@media (min-width: 992px){
-
-    #onde-estamos .img-container-layout-fill, #map{
-        height: 300px !important;
-     }
-}
-@media (min-width: 1200px){
-
-    #onde-estamos .img-container-layout-fill, #map{
-        height: 320px !important;
-     }
-} */
-
-.img-outer{
-    width: 100%;
-    height: 100%;
-}
-/* 
-.card-text-box {
-    overflow: hidden;
-    display: -webkit-box !important;
-    word-break: break-all;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    white-space: normal;
-    text-overflow: ellipsis;
-}
-.card-img-top{
-    background: linear-gradient(0deg, rgba(196,194,194,1) 0%, rgba(143,143,143,1) 50%, rgba(196,194,194,1) 100%);
-    width: 100% !important;
-    height: 180px; 
-} */
-
-@media (min-width: 420px) and (max-width: 767px){
-
-}
-@media (min-width: 768px){
-
-}
-@media (min-width: 1100px){
-
-}
-@media (min-width: 1200px){
-
-}
 
 
-@media(max-width: 575px) { 
-
-}
-@media(min-width: 576px) and (max-width: 799px){
-
-}
-@media(min-width: 800px){
-
-}

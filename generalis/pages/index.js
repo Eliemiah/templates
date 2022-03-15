@@ -7,15 +7,6 @@ const Home = props => {
 
   useEffect(() => props.setMainContentAsLoaded(true), [])
 
-
-  const especialidades = [
-    {id: "infancia-e-juventude", name: "Varas de infância e juventude", icon: "fa-solid fa-child" , description: "Lorem lipsum dolor sit amet"},
-    {id: "fazenda-publica", name: "Varas da Fazenda Pública", icon: "fa-solid fa-coins" , description: "Lorem lipsum dolor sit amet"},
-    {id: "civeis", name: "Varas cíveis", icon: "fa-solid fa-user-large" , description: "Lorem lipsum dolor sit amet"},
-    {id: "famila", name: "Varas de família", icon: "fa-solid fa-users" , description: "Lorem lipsum dolor sit amet"},
-    {id: "criminais", name: "Varas criminais", icon: "fa-solid fa-user-secret" , description: "Lorem lipsum dolor sit amet"},
-  ]
-
   const [itemClicked, setItemToClicked] = useState(null)
 
 
@@ -24,21 +15,19 @@ const Home = props => {
       <div id="hero" className="bg-primary">
         <Image src={heroImage} placeholder='blur' layout="fill" objectFit="cover" quality={95} priority />
         <div id="hero-content" className="h-100 w-100 d-flex flex-column justify-content-center align-items-center text-center relative">
-          <h1 className="text-white mx-2">
-            <strong>A justiça é para todos.</strong>
-          </h1>
+          <h1 className="text-white mx-2"><strong>A justiça é para todos.</strong></h1>
           <p className="lead text-center text-white mx-2">
-            <strong>A Almeida e Falconi tem um especialista para o seu caso&nbsp;</strong>
+            <strong>A Almeida e Falconi tem o especialista certo para o seu caso&nbsp;</strong>
           </p>
-          <a className="btn text-decoration-none btn-lg text-white btn-primary border-0 mt-4" >Saiba mais »</a>
+          <a className="btn text-decoration-none btn-lg text-white btn-primary border-0 mt-4">Saiba mais »</a>
         </div>        
       </div>
-      <div id="sobre-nos-index" className="container-fluid px-5">
+      <div id="sobre-nos-index" className="container-fluid">
         <div className="row">
           <div className="col-md-12">
             <div className="row">
-              <div className="col-md-6 description">
-                <div>
+              <div className="col-md-6 text-box-float px-4">
+                <div className="text-box-float-inner relative">
                   <h2 className="w-100 text-center text-primary pt-4 pb-2">A Almeida e Falconi</h2>
                   <p className="text-primary lead">
                     Experiência e qualificação são as marcas da nossa firma.
@@ -50,7 +39,7 @@ const Home = props => {
                   <a className="btn text-decoration-none btn-lg text-white btn-primary border-0 mt-4" >Saiba mais »</a>
                 </span>
               </div>
-              <div className="col-md-6 ">
+              <div className="col-md-6 px-0">
                 <div className="img-container-layout-fill relative">
                   <Image src={nossasImagesBG} placeholder='blur' layout="fill" objectFit="cover" quality={95} priority 
                     width={2000} height={1500}/>
@@ -67,20 +56,19 @@ const Home = props => {
               <div className="col-md-6 list-container ">
                 <h2 className="w-100 text-center text-primary pt-4 pb-2 pt-3">Áreas de atuação</h2>
                 <ul className="bg-primary d-flex flex-column justify-content-center mt-3 mb-0 mx-auto">
-                  {especialidades.map(({id, name}) => (
+                  {props.especialidades.map(({id, name}) => (
                     <li id={id} key={id} 
                     className={`py-3 ml-3 relative d-flex flex-row w-100 text-white ${id === itemClicked ? "active  " : ""}`}
                       onClick={() => {
                         setItemToClicked(id)
                         document.getElementById("list-content").scrollIntoView()
                       }}>
-                        {/* <a href={`#atuacao#${name}`}>{name}</a></span> */}
                       <span className="item-text d-flex align-items-center">{name}</span>
                   </li>))}
                 </ul>
               </div>
               <div id="list-content" className="col-md-6">
-                {especialidades.map(({id, name, icon, description}) => (
+                {props.especialidades.map(({id, name, icon, description}) => (
                   <div key={id} 
                   className={`list-item-context w-100 h-100 d-flex flex-column align-items-center mx-auto ${id === itemClicked ? "" : "hide"}`}>
                     <i className={`mb-2 ${icon}`}></i>
@@ -96,7 +84,14 @@ const Home = props => {
           </div>
         </div>
       </div>
-      <div className="py-5 bg-light wrapper" id="fale-conosco">
+    </>
+  )
+}
+
+export default Home
+/*
+
+      <div className="py-5 bg-light wrapper" id="fale-conosco-index">
       <div className="container">
         <div className="row mb-4 top-space">
           <div className="col-md-12 text-center">
@@ -136,8 +131,4 @@ const Home = props => {
           </div>  
       </div>     
     </div>
-    </>
-  )
-}
-
-export default Home
+*/
