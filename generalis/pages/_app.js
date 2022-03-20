@@ -29,12 +29,63 @@ function MyApp({ Component, pageProps }) {
       route: 'fale-conosco'
     }
   ]
-  const especialidades = [
-    {id: "infancia-e-juventude", name: "Varas de infância e juventude", icon: "fa-solid fa-child" , description: "Lorem lipsum dolor sit amet"},
-    {id: "fazenda-publica", name: "Varas da Fazenda Pública", icon: "fa-solid fa-coins" , description: "Lorem lipsum dolor sit amet"},
-    {id: "civeis", name: "Varas cíveis", icon: "fa-solid fa-user-large" , description: "Lorem lipsum dolor sit amet"},
-    {id: "famila", name: "Varas de família", icon: "fa-solid fa-users" , description: "Lorem lipsum dolor sit amet"},
-    {id: "criminais", name: "Varas criminais", icon: "fa-solid fa-user-secret" , description: "Lorem lipsum dolor sit amet"},
+  const professionals = [
+    {
+      pic: '',
+      name: "João Chagas Almeida",
+      bio: "Graduado em Direito previdenciario pela Lore Lipsum - Especialista em direito previdenciario.",
+      areas: ["infancia-e-juventude", "fazenda-publica"]
+    },
+    {
+      pic: '',
+      name: "João Martins Albuquerque",
+      bio: "Graduado em Direito previdenciario pela Lore Lipsum - Especialista em direito previdenciario.",
+      areas: ["civeis"]
+    },
+    {
+      pic: '',
+      name: "Maria Joana Falconi Botelho",
+      bio: "Graduado em Direito previdenciario pela Lore Lipsum - Especialista em direito previdenciario.",
+      areas: ["famila", "criminais"]
+    }
+
+  ]
+  const praticeAreas = [
+    {
+      id: "infancia-e-juventude", 
+      name: "Varas de infância e juventude", 
+      icon: "fa-solid fa-child" , 
+      description: "Quisque finibus enim vel congue commodo. Mauris nec quam sed turpis consectetur rutrum non ac nunc. Fusce feugiat sem quis justo commodo commodo. Ut neque turpis, rutrum vitae vestibulum eu, hendrerit eget justo.",
+      professionalID: "João Chagas Almeida"      
+    },
+    {
+      id: "fazenda-publica", 
+      name: "Varas da Fazenda Pública", 
+      icon: "fa-solid fa-coins" , 
+      description: "Quisque finibus enim vel congue commodo. Mauris nec quam sed turpis consectetur rutrum non ac nunc. Fusce feugiat sem quis justo commodo commodo. Ut neque turpis, rutrum vitae vestibulum eu, hendrerit eget justo.",
+      professionalID: "João Chagas Almeida"      
+    },
+    {
+      id: "civeis", 
+      name: "Varas cíveis", 
+      icon: "fa-solid fa-user-large" , 
+      description: "Quisque finibus enim vel congue commodo. Mauris nec quam sed turpis consectetur rutrum non ac nunc. Fusce feugiat sem quis justo commodo commodo. Ut neque turpis, rutrum vitae vestibulum eu, hendrerit eget justo.",
+      professionalID: "Maria Joana Falconi Botelho"
+    },
+    {
+      id: "famila", 
+      name: "Varas de família", 
+      icon: "fa-solid fa-users" , 
+      description: "Quisque finibus enim vel congue commodo. Mauris nec quam sed turpis consectetur rutrum non ac nunc. Fusce feugiat sem quis justo commodo commodo. Ut neque turpis, rutrum vitae vestibulum eu, hendrerit eget justo.",
+      professionalID:  "João Martins Albuquerque"
+    },
+    {
+      id: "criminais", 
+      name: "Varas criminais", 
+      icon: "fa-solid fa-user-secret" ,
+      description: "Quisque finibus enim vel congue commodo. Mauris nec quam sed turpis consectetur rutrum non ac nunc. Fusce feugiat sem quis justo commodo commodo. Ut neque turpis, rutrum vitae vestibulum eu, hendrerit eget justo.",
+      professionalID: "Maria Joana Falconi Botelho"
+    },
   ]
   const logo = {
     pic: logoPic,
@@ -49,7 +100,7 @@ function MyApp({ Component, pageProps }) {
       <CustomHead />
       <Menu mainContentIsLoaded={mainContentIsLoaded} logo={logo} menuItems={menuEntries} mobileModeEnabled={widthMatch} />
       <main id="page-content" className="relative w-100">
-        <Component setMainContentAsLoaded={setMainContentAsLoaded} {...pageProps} especialidades={especialidades} />
+        <Component setMainContentAsLoaded={setMainContentAsLoaded} {...pageProps} areas={praticeAreas} professionals={professionals} />
       </main>
     </>
   )

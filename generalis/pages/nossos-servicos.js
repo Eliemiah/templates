@@ -1,38 +1,55 @@
+import Image from 'next/image'
 import { useEffect } from 'react'
-
+import ImgTop from '../public/images/others/pexels-sora-shimazaki-5673488.jpg'
 
 const NossosServicos = props => {
     useEffect(() => props.setMainContentAsLoaded(true), [])
 
-
     return(
-        <div className="container px-4 h-100 w-100">
-            {props.especialidades.map(item => (
-                <div key={item.id} className="row w-100 my-4 py-4 d-flex justify-content-center">
-                    <div className="col-md-12 d-flex justify-content-center align-items-center flex-column professional-area">
-                        <i className={`${item.icon} area-icon mb-4`}></i>
-                        <h2 className="area-title">{item.name}</h2>
-                        <p className="area-description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                            nisi ut aliquip ex ea commodo consequat
-                        </p>
-                        <div className="professional-avatar border  rounded">
-                            <div className="professional-avatar-pic-container relative">
-                                <div className="bg-primary">
-                                    
-                                </div>
-                            </div>
-                            <div className="professional-avatar-text-container">
-                                <h5 className="professional-name">Juan Villa da Silva</h5>
-                                <p className="professional-resume">
-                                    Graduado em Direito previdênciario pela Fundação Getúlio Vargas.
-                                </p>
-                            </div>
+        <div id="nossos-servicos">
+            <div className="bg-primary relative img-container-layout-fill">
+                <Image id="img-top" src={ImgTop} placeholder='blur' layout="fill" objectFit="cover" quality={95} priority 
+                    width={1600} height={800}/>
+            </div>
+            <div id="pratice-areas" className="container fluid w-100" >
+            {
+            props.professionals.map(professional => {
+                return (
+                <div key={professional.name} className="pratice-area row py-3 mt-2 px-2">
+                    <div className="col-md-8 d-flex flex-column ">
+                        <>
+                        {
+                        props.areas.map(area => {
+                            return(
+                            professional.name === area.professionalID 
+                            ?  
+                                (<div key={area.id} className="py-2">
+                                {
+                                    <>
+                                        <h4 className="mt-1">{area.name}</h4>
+                                        <p className="mt-2">{area.description}</p>
+                                    </>
+                                }
+                                </div>)
+                            : 
+                                ''
+                        )})
+                        }   
+                        </>
+                    </div>
+                    <div className="pratice-area-professional col-md-4 py-2 ">
+                        <div className="pic-container my-2">
+                            <div className="bg-primary w-100 h-100"></div>
+                        </div>
+                        <div className="text-container my-2">
+                            {/* <span className="h6">Profissional responsável:</span> */}
+                            <h5 className="py-2">{professional.name}</h5>
+                            <p className="h6">{professional.bio}</p>
                         </div>
                     </div>
                 </div>
-            ))}
+            )})}
+            </div>
         </div>
     )
 }
