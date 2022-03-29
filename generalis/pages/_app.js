@@ -1,4 +1,3 @@
-// import 'bootstrap/dist/css/bootstrap.min.css'
 import '../public/styles/bootstrap-custom.scss'
 import  '../public/styles/custom.css'
 import '../public/fontawesome-free-6.0.0-web/css/fontawesome.css'
@@ -8,7 +7,10 @@ import { useMediaQuery } from 'react-responsive'
 import { useState } from 'react'
 import CustomHead from '../components/CustomHead/CustomHead'
 import Menu from '../components/Menu/Menu'
+import Footer from '../components/Footer/Footer'
 import logoPic from '../public/images/logo/logo_white.png'
+import Avatar1 from '../public/images/avatars/alejandro-vergara-blanco-872557_1920.jpg'
+import Avatar2 from '../public/images/avatars/business-man-1125324_1920.jpg'
 
 function MyApp({ Component, pageProps }) {
   const menuEntries = [
@@ -31,19 +33,19 @@ function MyApp({ Component, pageProps }) {
   ]
   const professionals = [
     {
-      pic: '',
+      pic: Avatar1,
       name: "João Chagas Almeida",
       bio: "Graduado em Direito previdenciario pela Lore Lipsum - Especialista em direito previdenciario.",
       areas: ["infancia-e-juventude", "fazenda-publica"]
     },
     {
-      pic: '',
+      pic: Avatar2,
       name: "João Martins Albuquerque",
       bio: "Graduado em Direito previdenciario pela Lore Lipsum - Especialista em direito previdenciario.",
       areas: ["civeis"]
     },
     {
-      pic: '',
+      pic: Avatar1,
       name: "Maria Joana Falconi Botelho",
       bio: "Graduado em Direito previdenciario pela Lore Lipsum - Especialista em direito previdenciario.",
       areas: ["famila", "criminais"]
@@ -101,6 +103,7 @@ function MyApp({ Component, pageProps }) {
       <Menu mainContentIsLoaded={mainContentIsLoaded} logo={logo} menuItems={menuEntries} mobileModeEnabled={widthMatch} />
       <main id="page-content" className="relative w-100">
         <Component setMainContentAsLoaded={setMainContentAsLoaded} {...pageProps} areas={praticeAreas} professionals={professionals} />
+        <Footer firstLine={" Radix Soluções na Rede"} secondLine={["0800-777-7000", "0800-777-7777"]}/>
       </main>
     </>
   )

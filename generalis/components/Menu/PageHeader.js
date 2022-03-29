@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Toolbar from '@mui/material/Toolbar';
-import ItemTitle from './ItemTitle';
+// import ItemTitle from './ItemTitle';
 import IconButton from '@mui/material/IconButton'
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -40,15 +40,11 @@ const PageHeader = props => {
             </div>
             <ul id="nav-desktop" className="w-75 pr-5 h-100 pb-2 my-0 d-flex text-center justify-content-end align-items-end pe-3">
             {
-              props.items.map((item, index ) => {
-
-                return (
-                  <li key={props.items.length + index}  className="ms-4 text-center d-flex justify-content-center align-items-center" 
-                      onClick={() => props.setSectionToActive(item.route)}>
-                    <a className="text-white nav-a" href={item.route}>
-                      <ItemTitle index={item.route} sectionActive={props.sectionActive} itemText={item.title}/>
-                    </a>
-                  </li>)})
+              props.items.map((item, index ) => (
+                <li key={props.items.length + index}  className="ms-4 text-center d-flex justify-content-center align-items-center" 
+                    onClick={() => props.setSectionToActive(item.route)}>
+                  <a className="text-white nav-a" href={item.route}>{item.title}</a>
+                </li>))
             }
             </ul>
           </>
@@ -58,7 +54,7 @@ const PageHeader = props => {
 }
 
 export default PageHeader
-
+//<ItemTitle index={item.route} sectionActive={props.sectionActive} itemText={item.title}/>
 
 /*
 

@@ -4,7 +4,6 @@
     --body-height: 100vh;
 }
 
-
 @media(min-width: 992px){
     :root{
         --logo-outer-width: 16.2rem;
@@ -13,6 +12,12 @@
     .navbar-logo .logo-outer{
         width: var(--logo-outer-width);
         height: 3rem;
+    }
+    #nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .top-container {
+        flex-direction: row;
+    }
+    #nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .top-container h5{
+        text-align: start;
     }
 }
 @media(min-width: 810px){
@@ -24,6 +29,7 @@
     }
 }
 @media(min-width: 768px){
+    /*----------Regras gerais---------------*/
     :root{
         --logo-outer-width: 14.5rem;
         --app-bar-height: 80px;
@@ -35,15 +41,28 @@
     #app-bar{
         height: var(--app-bar-height) !important;
     }
+    .float-content-default:not(#sobre-a-empresa .float-content-default){
+        background-color: rgba(255, 255, 255, 0.6);
+        z-index: 2;
+        margin-top: -10rem !important;
+        margin-bottom: 10rem !important;
+        margin-left: 3rem !important;
+        margin-right: 3rem !important;
+    }
     #sobre-nos-index .img-container-layout-fill,
     #fale-conosco .img-container-layout-fill,
-    #nossos-servicos .img-container-layout-fill{
+    #nossos-servicos .img-container-layout-fill,
+    #localizacao .img-container-layout-fill{
         height: 330px;
     }
     #sobre-a-empresa .text-box-float-inner > div,
     #fale-conosco .text-box-float-inner > div {
         margin-top: 3rem;   
     }
+    .section{
+        min-height: 470px;
+    }
+    /*---------------------------------------*/
     /*------------Página inicial-------------*/
     #sobre-nos-index .img-container-layout-fill{
         height: 100%;
@@ -62,57 +81,52 @@
         justify-content: end;
     }
     /*--------------------------------------*/
-    /*---------Página quem somos------------*/
-    #sobre-a-empresa .section{
-        min-height: 470px;
-    }
-    /*------------------------------*/
+
     /*-----Página Fale cononsco----*/
-    #fale-conosco .text-box-float{
-        z-index: 2;
-        margin-top: -50px;
-        background-color: rgba(255, 255, 255, 0.6);
-    }  
     #fale-conosco #contacts > div{
         align-items: flex-end;
     }  
     /*------------------------------------*/
     /*--------Página Nossos serviços-------*/
-
-    #nossos-servicos #pratice-areas{
-        order: 2;
-        position: relative;
-        z-index: 2;
+    #nossos-servicos #pratice-areas .pratice-area .pratice-area-professional{
+        flex-direction: column;
     }
-    #nossos-servicos #pratice-areas .pratice-area{
-        margin-top: -10rem !important;
-        margin-bottom: 10rem !important;
-    }
-    #nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .text-container h5{
-        text-align: start;
-    }
-    #nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .pic-container{
-        width: 90px;
-        height: 90px;
+    #nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .top-container {
         margin-right: 14px;
-        position: relative;
-        border-radius: 50%;
-        float: left !important;
-        shape-outside: circle();
-
+        margin-left: 8px;
+        flex-direction: column;
+    }
+    #nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .top-container h5{
+        text-align: center;
+        margin-left: 10px;
     }
     /*------------------------------------*/
 }
 @media(max-width: 767px){
     /*-------------Regras gerais---------------*/
-    .text-box-float .text-box-float-inner{
+    .order-2-mobile{
+        order: 2;
+    }
+    .float-content-default, .float-content-alt{
         background-color: rgba(255, 255, 255, 0.6);
+    }
+    .float-content-default{
+        z-index: 2;
+        margin-top: -8rem !important;
+        margin-bottom: 5.5rem !important;
         margin-left: 3rem !important;
-        margin-bottom: 80px;
+        margin-right: 3rem !important;
+    }
+    .float-content-alt{
+        z-index: 2;
+        margin-left: 3rem !important;
+        margin-top: -6rem;
+        /* margin-bottom: 80px; */
         margin-right: 3rem !important;
         padding-right: 1rem!important;
         padding-left: 1rem!important;
     }
+
     /*----------------------------------------*/
     /*-----------Página inicial-----------------*/
     #sobre-nos-index{
@@ -122,17 +136,13 @@
     #sobre-nos-index .img-container-layout-fill,
     #sobre-a-empresa .img-container-layout-fill,
     #fale-conosco .img-container-layout-fill,
-    #nossos-servicos .img-container-layout-fill{
+    #nossos-servicos .img-container-layout-fill:not(#nossos-servicos .pratice-area-professional .pic-container),
+    #localizacao .img-container-layout-fill{
         min-height: 220px;
         max-height: 280px;
     }    
-    #sobre-nos-index .description, .text-box-float, #nossos-servicos #pratice-areas{
-        order: 2;
-        position: relative;
-        z-index: 2;
-    }
-
     #atuacao #list-content{
+        padding-top: 80px;
         height: 400px !important;
         justify-content: center !important;
     }
@@ -150,12 +160,11 @@
         top: -8rem !important;   
         margin-bottom: -8rem !important;
     }
-    /*---------------------------------*/
-    /*-------Página Quem somos---------*/
-    #sobre-a-empresa #section-4 #map{
+    .map{
         min-height: 450px;
     }
-    /*------------------------------*/
+    /*---------------------------------*/
+
     /*---------Página Fale conosco---------*/
     #fale-conosco .text-box-float-inner{
         margin-bottom: 16rem;   
@@ -166,26 +175,24 @@
     /*-------------------------------------*/
     /*--------Página Nossos serviços-------*/
 
-    #nossos-servicos #pratice-areas .pratice-area{
-        margin-top: -8rem !important;
-        margin-bottom: 8rem !important;
+    #nossos-servicos #pratice-areas .pratice-area h4{
+        text-align: center;
     }
     #nossos-servicos #pratice-areas .pratice-area .pratice-area-professional{
         position: relative;
-        background-color: rgb(241 241 241);
+        background-color: rgb(237, 237, 237);
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 40px !important;
     }
-    #nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .pic-container{
-        width: 72px !important;
-        height: 72px !important;
+    #nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .top-container{
+        flex-direction: column;
+        align-items: center;
+        margin-top: -40px !important;
         margin-right: 14px !important;
-        position: relative !important;
         border-radius: 50%;
         float: left !important;
-        shape-outside: circle() !important;
-
     }
     #nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .text-container{
         display: block  !important;
@@ -195,8 +202,6 @@
     }
     /*------------------------------------*/
 }
-
-
 @media(min-width: 600px){
     :root{
         --app-bar-height: 64px;
@@ -232,7 +237,6 @@
     .menu-btn{
         width: calc(100% - var(--logo-outer-width)) !important;
     }
-
 }
 @media(max-width: 575px){
     /*---------Regras gerais-----*/
@@ -284,17 +288,27 @@
     
 }
 
-
 /*--------Regras gerais------------*/
 body{
     width: var(--body-width);
     height: var(--body-height);
-    overflow-x: hidden;
+    overflow-x: hidden !important;
     font-family: 'Montserrat', sans-serif !important;
 }
+#page-content{
+    overflow-x: hidden !important;
+    scroll-behavior: smooth !important;
+
+}
+
 .relative{
     position: relative !important;
 }
+.float-container, #atuacao .list-container{
+    position: relative;
+    z-index: 2;
+}
+
 .hide{
     display: none !important;
 }
@@ -372,20 +386,6 @@ button:focus{
     min-height: unset !important;
     position: unset !important;
 } 
-
-#sobre-nos-index  i{
-    width: 70px;
-    height: 70px;
-}
-#atuacao .list-container{
-    position: relative;
-    z-index: 2;
-}
-#atuacao .list-container{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
 #atuacao .list-container ul .active > span:after {
     position: absolute;
     top: 20px;
@@ -404,15 +404,23 @@ button:focus{
 #sobre-a-empresa #img-1 > div, #fale-conosco #img-1 > div, #nossos-servicos #img-top > div {
     height: 100% !important; 
 }
-
-/*-----Página quem-somos -----*/
-#sobre-a-empresa #section-3 i {
+#sobre-a-empresa #section-3 i, #localizacao i {
     font-size: 7rem;
 }
-#sobre-a-empresa #section-4 #map{
+.map{
     height: 100%;
 }
-/*----------------------------*/
+#footer{
+    height: 150px;
+}
+
+#footer .first-line{
+
+}
+#footer .second-line{
+    
+}
+/*-----------------------------------*/
 
 /*--------Página Fale consosco---------*/
 #fale-conosco  #subject{
@@ -431,29 +439,18 @@ button:focus{
 }
 /*---------------------------------*/
 /*--------Página Nossos serviços-------*/
-#nossos-servicos #pratice-areas .pratice-area{
-    background-color: rgba(255, 255, 255, 0.6);
-
+#nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .top-container{
+    border-radius: 100%;
 }
-#nossos-servicos #pratice-areas .pratice-area .pratice-area-professional{
-    position: relative;
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    */
-} 
-#nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .pic-container{
-    position: relative;
-    border-radius: 50%;
+#nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .top-container .pic-container > span{
+    position: unset !important;
 }
-#nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .pic-container > div{
-    width: 4.5rem;
-    height: 4.5rem;
-    border-radius: 100px
+#nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .top-container .pic-container{
+    width: 4.5rem !important;
+    height: 4.5rem !important;
 }
-#nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .text-container{
-    display: flex;
-    flex-direction: column;
+#nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .top-container .professional-pic{
+    border-radius: 100px !important;
 }
 #nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .text-container *{
     margin-left: 8px;

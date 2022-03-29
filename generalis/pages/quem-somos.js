@@ -10,9 +10,9 @@ const QuemSomos = props => {
 
     return(
         <div id="sobre-a-empresa" className="container-fluid px-0 ">
-            <div id="section-1" className="row m-0 section">
-                <div className="col-md-6 py-3 text-box-float ">
-                    <div className=" pt-3 relative text-box-float-inner">{/**text-box-float-inner/ */}
+            <div id="section-1" className="row m-0 section ">
+                <div className="col-md-6 py-3 order-2-mobile float-container relative">
+                    <div className=" pt-3 float-content-default relative">
                         <h2 className="mx-4 py-2 text-black d-flex justify-content-center">A Almeida e Falconi</h2>
                         <p className="mx-4 text-black">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec augue dui, efficitur quis nisl id, pulvinar blandit est. In quis dui porta, euismod metus ut, sagittis nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam vel mi vulputate, consectetur nulla vel, ornare risus. Quisque dignissim nisl sapien, a elementum elit mattis in.
@@ -22,8 +22,8 @@ const QuemSomos = props => {
                         </p>
                     </div>
                 </div>
-                <div className="col-md-6 px-0">
-                    <div id="img-1" className="bg-primary relative img-container-layout-fill">
+                <div className="col-md-6 px-0 bg-primary">
+                    <div id="img-1" className="relative img-container-layout-fill">
                         <Image src={bgTop} placeholder='blur' layout="fill" objectFit="cover" quality={95} priority 
                             width={1600} height={800}/>
                     </div>
@@ -36,8 +36,8 @@ const QuemSomos = props => {
                             width={1600} height={800}/>
                     </div>               
                 </div>
-                <div className="col-md-6  py-3 text-box-float">
-                    <div className=" pt-3 relative text-box-float-inner">
+                <div className="col-md-6  py-3 order-2-mobile float-container relative">
+                    <div className=" pt-3 float-content-default relative">
                         <h2 className="mx-4 py-2 text-black d-flex justify-content-center">Nossos clientes</h2>
                         <p className="mx-4 text-black">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec augue dui, efficitur quis nisl id, pulvinar blandit est. In quis dui porta, euismod metus ut, sagittis nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam vel mi vulputate, consectetur nulla vel, ornare risus. Quisque dignissim nisl sapien, a elementum elit mattis in.
@@ -48,14 +48,14 @@ const QuemSomos = props => {
                 </div>
             </div>
             <div id="section-3" className="row m-0">
-                <div className="col-md-6 py-3 text-box-float section">
-                    <div className="pt-3 relative text-box-float-inner">
+                <div className="col-md-6 py-3 order-2-mobile float-container relative">
+                    <div className="pt-3 float-content-default relative">
                         <h2 className="mx-4 py-2 text-black d-flex justify-content-center">Onde estamos</h2>
                         <div className="d-flex justify-content-center flex-column">
                             <p className="mx-4 my-4 d-flex justify-content-center">
                                 <i className="fa-solid fa-location-dot"></i>
                             </p>
-                            <p className="mx-4 d-flex justify-content-center lead">
+                            <p className="mx-4 d-flex justify-content-center align-items-center lead">
                             Av. Getúlio Vargas, 123, Centro Histórico - BA
                             </p>
                         </div>
@@ -70,7 +70,7 @@ const QuemSomos = props => {
             </div>
             <div id="section-4" className="row mx-0 px-0 section">
                 <div className="col-md-12 px-0">
-                    <Map id="map"/>
+                    <Map />
                 </div>
             </div>
         </div>

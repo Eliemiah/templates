@@ -8,8 +8,8 @@ const PageDrawer = dynamic(() => import ('./PageDrawer'))
 const Menu = ({menuItems, widthMatch}) => {
 
     const [drawerState, setDrawerState] = useState(false)
-    const [drawerReleased, setDrawerToReleased ] = useState(false) 
-    const [ menuHasMounted, setMenuToMounted ] = useState(false)
+    const [drawerReleased, setDrawerToReleased] = useState(false) 
+    const [menuHasMounted, setMenuToMounted] = useState(false)
     const [sectionActive, setSectionToActive] = useState("#inicio")
 
     const handleDrawerState = (opt) => opt === true ? setDrawerState(true) : setDrawerState(!drawerState);
