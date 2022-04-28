@@ -29,13 +29,13 @@ const Menu = (props) => {
 
 
     const [drawerState, setDrawerState] = useState(false)
-    const [menuHasMounted, setMenuToMounted ] = useState(false)
+    // const [menuHasMounted, setMenuToMounted ] = useState(false)
     const [sectionActive, setSectionToActive] = useState("#inicio")
 
     const handleDrawerState = (opt) => opt === true ? setDrawerState(true) : setDrawerState(!drawerState);
 
 
-    useEffect(() => setMenuToMounted(true), [])
+    // useEffect(() => setMenuToMounted(true), [])
 
 
     return(

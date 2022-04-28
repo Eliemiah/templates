@@ -4,103 +4,90 @@
     --body-height: 100vh;
 }
 
-@media(min-width: 992px){
+@media(min-width: 576px) and (max-width: 767px){
     :root{
-        --logo-outer-width: 16.2rem;
-        --app-bar-height: 80px;
+        --logo-outer-width: 14.1rem;
     }
     .navbar-logo .logo-outer{
         width: var(--logo-outer-width);
-        height: 3rem;
+        height: 2.5rem;
     }
-    #nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .top-container {
-        flex-direction: row;
-    }
-    #nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .top-container h5{
-        text-align: start;
+    .menu-btn{
+        width: calc(100% - var(--logo-outer-width)) !important;
     }
 }
-@media(min-width: 810px){
+@media(max-width: 575px){
+    /*---------Regras gerais-----*/
+    .text-box-float .text-box-float-inner{
+        background-color: rgba(255, 255, 255, 0.6);
+        margin-left: 1rem !important;
+        margin-right: 1rem !important;
+        padding-right: 1rem!important;
+        padding-left: 1rem!important;
+    }
+    #sobre-a-empresa .text-box-float-inner,
+    #fale-conosco .text-box-float-inner{
+        margin-top: -12rem;
+    }
+    /*--------------------------------*/
+    /*---------Pagina inicial-----------*/
+    #sobre-nos-index .description > div {
+        margin-left: 1.2rem !important;
+        margin-right: 1.2rem !important;
+    }
+    #sobre-nos-index .text-box-float-inner{
+        margin-top: -9rem;
+    }
+    /*---------------------------*/
+}
+@media(min-width: 480px) and (max-width: 575px){
     :root{
-        --logo-outer-width: 15.7rem;
+        --logo-outer-width: 12.8rem;
     }
     .navbar-logo .logo-outer{
         width: var(--logo-outer-width);
+        height: 2.4rem;
+    }
+    .menu-btn{
+        width: calc(100% - var(--logo-outer-width)) !important;
     }
 }
-@media(min-width: 768px){
-    /*----------Regras gerais---------------*/
+@media(min-width: 0px) and (max-width: 599px){
     :root{
-        --logo-outer-width: 14.5rem;
-        --app-bar-height: 80px;
-    }
-    .navbar-logo .logo-outer{
-        width: var(--logo-outer-width);
-        height: 2.7rem;
+        --app-bar-height: 70px;
     }
     #app-bar{
         height: var(--app-bar-height) !important;
     }
-    .float-content-default:not(#sobre-a-empresa .float-content-default){
-        background-color: rgba(255, 255, 255, 0.6);
-        z-index: 2;
-        margin-top: -10rem !important;
-        margin-bottom: 10rem !important;
-        margin-left: 3rem !important;
-        margin-right: 3rem !important;
+     #page-content, #hero{
+        height: calc(100vh - var(--app-bar-height)) !important;
+        top: var(--app-bar-height);
     }
-    #sobre-nos-index .img-container-layout-fill,
-    #fale-conosco .img-container-layout-fill,
-    #nossos-servicos .img-container-layout-fill,
-    #localizacao .img-container-layout-fill{
-        height: 330px;
+}
+@media(min-width: 281px ) and (max-width: 479px){
+    :root{
+        --logo-outer-width: 10.2rem;
     }
-    #sobre-a-empresa .text-box-float-inner > div,
-    #fale-conosco .text-box-float-inner > div {
-        margin-top: 3rem;   
+    .navbar-logo .logo-outer{
+        width: var(--logo-outer-width);
+        height: 2.1rem;
     }
-    .section{
-        min-height: 470px;
+    .menu-btn{
+        width: calc(100% - var(--logo-outer-width)) !important;
     }
-    /*---------------------------------------*/
-    /*------------Página inicial-------------*/
-    #sobre-nos-index .img-container-layout-fill{
-        height: 100%;
+    
+}
+@media(min-width: 600px){
+    :root{
+        --app-bar-height: 64px;
     }
-    #sobre-nos-index .text-box-float .text-box-float-inner{
-        padding-left: 3rem !important;
-        padding-right: 3rem !important;
+    #app-bar{
+        height: var(--app-bar-height) !important;
     }
-    #atuacao ul{
-        min-width: 86%;
+    #page-content, #hero{
+        height: calc(var(--body-height) - var(--app-bar-height)) !important;
+        top: var(--app-bar-height);
     }
-    #atuacao #list-content{
-        justify-content: end !important;
-    }
-    #atuacao #list-content .list-item-context{
-        justify-content: end;
-    }
-    /*--------------------------------------*/
-
-    /*-----Página Fale cononsco----*/
-    #fale-conosco #contacts > div{
-        align-items: flex-end;
-    }  
-    /*------------------------------------*/
-    /*--------Página Nossos serviços-------*/
-    #nossos-servicos #pratice-areas .pratice-area .pratice-area-professional{
-        flex-direction: column;
-    }
-    #nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .top-container {
-        margin-right: 14px;
-        margin-left: 8px;
-        flex-direction: column;
-    }
-    #nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .top-container h5{
-        text-align: center;
-        margin-left: 10px;
-    }
-    /*------------------------------------*/
 }
 @media(max-width: 767px){
     /*-------------Regras gerais---------------*/
@@ -113,7 +100,7 @@
     .float-content-default{
         z-index: 2;
         margin-top: -8rem !important;
-        margin-bottom: 5.5rem !important;
+        margin-bottom: 10.5rem !important;
         margin-left: 3rem !important;
         margin-right: 3rem !important;
     }
@@ -185,6 +172,7 @@
         flex-direction: column;
         align-items: center;
         margin-top: 40px !important;
+        /* padding-bottom: 1.3rem !important; */
     }
     #nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .top-container{
         flex-direction: column;
@@ -202,92 +190,120 @@
     }
     /*------------------------------------*/
 }
-@media(min-width: 600px){
+@media(min-width: 768px){
+    /*----------Regras gerais---------------*/
     :root{
-        --app-bar-height: 64px;
-    }
-    #app-bar{
-        height: var(--app-bar-height) !important;
-    }
-    #page-content, #hero{
-        height: calc(var(--body-height) - var(--app-bar-height)) !important;
-        top: var(--app-bar-height);
-    }
-}
-@media(min-width: 0px) and (max-width: 599px){
-    :root{
-        --app-bar-height: 70px;
-    }
-    #app-bar{
-        height: var(--app-bar-height) !important;
-    }
-     #page-content, #hero{
-        height: calc(100vh - var(--app-bar-height)) !important;
-        top: var(--app-bar-height);
-    }
-}
-@media(min-width: 576px) and (max-width: 767px){
-    :root{
-        --logo-outer-width: 14.1rem;
+        --logo-outer-width: 14.5rem;
+        --app-bar-height: 80px;
     }
     .navbar-logo .logo-outer{
         width: var(--logo-outer-width);
-        height: 2.5rem;
+        height: 2.7rem;
     }
-    .menu-btn{
-        width: calc(100% - var(--logo-outer-width)) !important;
+    #app-bar{
+        height: var(--app-bar-height) !important;
     }
-}
-@media(max-width: 575px){
-    /*---------Regras gerais-----*/
-    .text-box-float .text-box-float-inner{
+    .float-content-default:not(#sobre-a-empresa .float-content-default){
         background-color: rgba(255, 255, 255, 0.6);
-        margin-left: 1rem !important;
-        margin-right: 1rem !important;
-        padding-right: 1rem!important;
-        padding-left: 1rem!important;
+        z-index: 2;
+        margin-top: -10rem !important;
+        margin-bottom: 10rem !important;
+        margin-left: 3rem !important;
+        margin-right: 3rem !important;
     }
-    #sobre-a-empresa .text-box-float-inner,
-    #fale-conosco .text-box-float-inner{
-        margin-top: -12rem;
+    #sobre-nos-index .img-container-layout-fill,
+    #fale-conosco .img-container-layout-fill,
+    #nossos-servicos .img-container-layout-fill,
+    #localizacao .img-container-layout-fill{
+        height: 330px;
     }
-    /*--------------------------------*/
-    /*---------Pagina inicial-----------*/
-    #sobre-nos-index .description > div {
-        margin-left: 1.2rem !important;
-        margin-right: 1.2rem !important;
+    #sobre-a-empresa .text-box-float-inner > div,
+    #fale-conosco .text-box-float-inner > div {
+        margin-top: 3rem;   
     }
-    #sobre-nos-index .text-box-float-inner{
-        margin-top: -9rem;
+    .section{
+        min-height: 470px;
     }
-    /*---------------------------*/
-}
-@media(min-width: 480px) and (max-width: 575px){
-    :root{
-        --logo-outer-width: 12.8rem;
+    /*---------------------------------------*/
+    /*------------Página inicial-------------*/
+    #sobre-nos-index .img-container-layout-fill{
+        height: 100%;
     }
-    .navbar-logo .logo-outer{
-        width: var(--logo-outer-width);
-        height: 2.4rem;
+    #sobre-nos-index .text-box-float .text-box-float-inner{
+        padding-left: 3rem !important;
+        padding-right: 3rem !important;
     }
-    .menu-btn{
-        width: calc(100% - var(--logo-outer-width)) !important;
+    #atuacao ul{
+        min-width: 86%;
     }
-}
-@media(min-width: 281px ) and (max-width: 479px){
-    :root{
-        --logo-outer-width: 10.2rem;
+    #atuacao #list-content{
+        justify-content: end !important;
     }
-    .navbar-logo .logo-outer{
-        width: var(--logo-outer-width);
-        height: 2.1rem;
+    #atuacao #list-content .list-item-context{
+        justify-content: end;
     }
-    .menu-btn{
-        width: calc(100% - var(--logo-outer-width)) !important;
-    }
-    
-}
+    /*--------------------------------------*/
 
+    /*-----Página Fale cononsco----*/
+    #fale-conosco #contacts > div{
+        align-items: flex-end;
+    }  
+    /*------------------------------------*/
+    /*--------Página Nossos serviços-------*/
+    #nossos-servicos #pratice-areas .pratice-area .pratice-area-professional{
+        flex-direction: column;
+    }
+    #nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .top-container {
+        flex-direction: column;
+        margin-right: 14px;
+        margin-left: 8px;
+    }
+    #nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .top-container h5{
+        text-align: center;
+        margin-left: 10px;
+    }
+    #nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .text-container {
+        color: #4a4a4a;
+    }
+    #nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .text-container p{
+        text-align: center;
+    }
+    /*------------------------------------*/
+}
+@media(min-width: 810px){
+    :root{
+        --logo-outer-width: 15.7rem;
+    }
+    .navbar-logo .logo-outer{
+        width: var(--logo-outer-width);
+    }
+    /*---------Página Nossos serviços----------*/
+    #nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .top-container h5{
+        text-align: center;
+        margin-left: 10px;
+        max-width: 64%;
+    }
+    /*----------------------------------------*/
+}
+@media(min-width: 992px){
+    :root{
+        --logo-outer-width: 16.2rem;
+        --app-bar-height: 80px;
+    }
+    .navbar-logo .logo-outer{
+        width: var(--logo-outer-width);
+        height: 3rem;
+    }
+    #nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .top-container {
+        flex-direction: row;
+    }
+    #nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .top-container h5{
+        text-align: start;
+    }
+    #nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .text-container p{
+        text-align: start;
+    }
+}
 /*--------Regras gerais------------*/
 body{
     width: var(--body-width);
@@ -414,12 +430,6 @@ button:focus{
     height: 150px;
 }
 
-#footer .first-line{
-
-}
-#footer .second-line{
-    
-}
 /*-----------------------------------*/
 
 /*--------Página Fale consosco---------*/
@@ -439,9 +449,7 @@ button:focus{
 }
 /*---------------------------------*/
 /*--------Página Nossos serviços-------*/
-#nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .top-container{
-    border-radius: 100%;
-}
+
 #nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .top-container .pic-container > span{
     position: unset !important;
 }
@@ -454,6 +462,9 @@ button:focus{
 }
 #nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .text-container *{
     margin-left: 8px;
+}
+#nossos-servicos #pratice-areas .pratice-area .pratice-area-professional .text-container {
+    color: #2a2a2a;
 }
 /*------------------------------------*/
 

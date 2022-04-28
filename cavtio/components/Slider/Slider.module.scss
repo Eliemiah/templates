@@ -1,0 +1,58 @@
+@charset "UTF-8";
+@import '../globalMixins/globalMixins';
+
+@include max575() { 
+    .glider{
+        > div {
+            height: 300px;
+
+            img{
+                width: 150px !important;
+                height: 150px !important;
+            }
+        }
+    }
+}
+@include min576-max799() {
+    .glider{
+        > div {
+            display: inline-flex;
+
+            img{
+                width: 165px !important;
+                height: 165px !important;
+            }
+        }
+    }
+}
+@include min800() {
+    .glider{
+        > div {
+            height: 300px;
+
+            img{
+                display: unset;
+                justify-content: unset;
+                width: 130px !important;
+                height: 130px !important; 
+            }
+        }
+    }
+}
+@include min992(){ 
+    /*Quando a viewport possuir esta medida, significa que não será mais necessário exibir os itens em formato de slide.
+     e por isso não será aplicado nenHum display ao item, bem como a centralização.
+     Sendo os slides desnecerários, as navegações pelos botões "dots" também serão.
+     */
+     .glider{
+        > div {
+            display: flex !important;
+            justify-content: center !important;
+
+            img{
+                width: 150px !important;
+                height: 150px !important;
+            }
+        }
+    }
+}
