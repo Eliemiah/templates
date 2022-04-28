@@ -2,21 +2,22 @@ import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import { useEffect } from 'react'
 import CustomCard from '../components/CustomCard/CustomCard'
-import styles from '../public/static/styles/Home.module.scss'
-import heroImage from '../public/static/images/hero/hero-image.jpg'
+import styles from '../public/styles/Home.module.scss'
 
 const Slider = dynamic(() => import ('../components/Slider/Slider'))
 const Map = dynamic(() => import ('../components/Map/Map'))
 
-import foodIcon from '../public/static/images/actions/Bread-01-256.png'
-import shirtIcon from '../public/static/images/actions/Men-T-Shirt-01-256.png'
-import firstAidIcon from '../public/static/images/actions/First-Aid-Kit-02-256.png'
-import identityIcon from '../public/static/images/actions/Identity-Card-256.png'
+import heroImage from '../public/images/hero/hero-image.jpg'
 
-import julia from '../public/static/images/volunteers/julia.jpg'
-import jose from '../public/static/images/volunteers/jose.jpg'
-import marina from '../public/static/images/volunteers/marina.jpg'
-import wagner from '../public/static/images/volunteers/wagner.jpg'
+import foodIcon from '../public/images/actions/Bread-01-256.png'
+import shirtIcon from '../public/images/actions/Men-T-Shirt-01-256.png'
+import firstAidIcon from '../public/images/actions/First-Aid-Kit-02-256.png'
+import identityIcon from '../public/images/actions/Identity-Card-256.png'
+
+import julia from '../public/images/volunteers/julia.jpg'
+import jose from '../public/images/volunteers/jose.jpg'
+import marina from '../public/images/volunteers/marina.jpg'
+import wagner from '../public/images/volunteers/wagner.jpg'
 
 const HomePage = props => {
 
@@ -208,7 +209,7 @@ const HomePage = props => {
             <div className={`${styles["img-container"]} next-image-reset`}>
               <Image layout="fill" objectFit="cover" alt="Sede da Cavtio" 
                 className= "img-fluid d-block mx-auto" 
-                src="/static/images/front/front.jpg"
+                src="/static/images/quem-somos/front.jpg"
                 sizes="(max-width: 360px) 98vw, (max-width: 450px) 75vw, (max-width: 600px) 30vw, (max-width: 767px) 45vw, 26vw "/>
             </div>
           </div>

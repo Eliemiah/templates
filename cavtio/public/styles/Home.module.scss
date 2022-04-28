@@ -1,0 +1,226 @@
+@charset "UTF-8";
+@import "../../components/globalMixins/globalMixins";
+
+$viewport-width: 100vw;
+$viewport-height: 100vh;
+
+#page-content{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+#home{
+    $hero-primary-color:  #a2415e;
+
+    width: $viewport-width;
+    height: $viewport-height;
+    
+    #hero-bg{
+        filter: brightness(0.8);
+    }
+    #hero-content{
+        position: absolute;
+        z-index: 2;
+
+        h1{
+            font-weight: 700;
+        }
+        p{
+            font-weight: 500;
+        }
+    }
+    #hero-button{
+        background-color: $hero-primary-color !important;
+    }
+}
+#volunteers-container{
+    flex-wrap: wrap;
+}
+.volunteer, .action{
+    margin-bottom: 2.3rem;
+}
+@include min200-max280() {
+    #quem-somos {
+        .img-container{
+        width: 180px;
+        height: 180px;
+        }
+    }
+}
+@include min281-max575() {
+    #quem-somos {
+        .img-container{
+            min-width: 200px ;
+            min-height: 200px;
+            max-height: 280px;
+            max-width: 280px;
+        }
+    }
+}
+@include min576-max767() {
+    #quem-somos {
+        .img-container{
+            min-width: 240px;
+            min-height: 240px;
+            max-width: 285px;
+            max-height: 285px;
+        }
+    }
+}
+@include max320() {
+    #onde-estamos{
+        .img-container{
+            height: 230px;
+        }
+        .map-container{
+            height: 230px;
+        }
+    }
+
+}
+@include min321-max477() {
+    #onde-estamos{
+         .img-container{
+            height: 270px ;
+         } 
+         .map-container{
+            height: 270px ;
+         } 
+    }
+}
+@include min478-max529() {
+    #onde-estamos .img-container{
+        height: 300px ;
+     }
+     .map-container{
+        height: 300px ;
+     } 
+}
+@include min530-max767() {
+    #onde-estamos{
+        .img-container{
+            height: 320px ;
+         }   
+         .map-container{
+            height: 320px ;
+        }
+    } 
+}
+@include max767() {
+    #quem-somos {
+        .img-container{
+            width: 75%;
+        }
+    }
+    .cards-container{
+        flex-direction: column;
+    }
+    .volunteer-pic-container{
+        width: 12rem;
+    }
+}
+@include min768() {
+    #quem-somos {
+        .img-container{
+            width: 100%;
+        }
+    }
+    .cards-container{
+        flex-direction: row;
+    }
+    #onde-estamos {
+        .img-container{
+            height: 224px !important;
+            padding-right: 1rem;
+         }
+         .map-container{
+            height: 224px !important;
+            padding-left: 1rem;
+         }
+    }
+
+    #volunteers-container, .our-actions-container{
+        flex-wrap: wrap;
+
+        .volunteer, .action{
+            width: 50%;
+            
+            .volunteer-pic-container{
+                width: 10rem;
+                height: 10rem;
+            }
+            .volunteer-info{
+                  height: 12rem;                
+            }
+        }
+    }
+
+}
+
+@include min992(){
+
+    #onde-estamos {
+        .img-container{
+            height: 300px !important;
+         }
+         .map-container{
+            height: 300px !important;
+        }
+    }
+
+    #volunteers-container, .our-actions-container{
+        flex-wrap: unset;
+
+    }
+
+}
+@include min1200() {
+    #onde-estamos {
+        .img-container{
+            height: 320px !important;
+         }
+         .map-container{
+            height: 320px !important;
+         }
+    }
+
+}
+
+#volunteers-container{
+    width: 100%;
+    .volunteer{
+
+        .volunteer-info{
+            word-break: break-word;
+        }
+    }
+
+
+}
+#onde-estamos {
+    .img-container{
+        width: 100%;
+    }
+    .map-container{
+        width: 100%;
+    }
+}
+
+#partners-box{
+    overflow: hidden;
+
+    #partners-box-content{
+        overflow-x: scroll;
+        overflow-y: hidden;
+        max-width: 90%;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
+#onde-estamos{
+    .fa-location-dot-container{
+        height: 3rem;
+    }
+    .fa-location-dot{
+        font-size: 5rem;
+    }
+}

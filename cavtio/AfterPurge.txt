@@ -1,2 +1,0 @@
-"glider-autoplay": "^1.1.0",
-"glider-js": "^1.7.7",

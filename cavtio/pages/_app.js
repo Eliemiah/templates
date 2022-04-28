@@ -1,4 +1,4 @@
-import '../public/static/styles/Global.scss'
+import '../public/styles/Global.scss'
 import '../public/styles/glider.min.css'
 import '../public/styles/fontawesome-free-6.0.0-web/scss/fontawesome.scss'
 import '../public/styles/fontawesome-free-6.0.0-web/scss/solid.scss'
@@ -11,7 +11,7 @@ import { useMediaQuery } from 'react-responsive'
 import { useState } from 'react'
 import CustomHead from '../components/CustomHead/CustomHead'
 
-import logoPic from '../public/static/images/logo/logo-white.png'
+import logoPic from '../public/images/logo/logo.png'
 
 import Menu from '../components/Menu/Menu'
 
