@@ -48,7 +48,7 @@ const Slider = ({images}) => {
                     return (
                         <div className="relative next-image-reset" key={index}>
                             <Image layout="fill"objectFit="cover" alt="Nosso parceiro X"
-                            src={`/static/images/slides/${img}`}  
+                            src={`/images/slides/${img}`}  
                             sizes="(max-width: 575px) 95vw, (min-width: 576px) 25vw, (min-width: 800px) 15vw"
                             />
                         </div>
