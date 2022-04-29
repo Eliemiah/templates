@@ -31,8 +31,8 @@ const App = ({ Component, pageProps}) => {
       route: '#nossas-acoes'
     },
     {
-      title: 'Fale conosco',
-      route: '#fale-conosco'
+      title: 'Onde estamos',
+      route: '#onde-estamos'
     }
   ]
 

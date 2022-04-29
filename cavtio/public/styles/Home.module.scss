@@ -114,9 +114,16 @@ $viewport-height: 100vh;
     .cards-container{
         flex-direction: column;
     }
-    .volunteer-pic-container{
-        width: 12rem;
+    #volunteers-container{
+        .volunteer{
+            width: 100%;
+    
+            .volunteer-pic-container{
+                width: 12rem;
+            }
+        }
     }
+
 }
 @include min768() {
     #quem-somos {

@@ -180,7 +180,7 @@ const HomePage = props => {
 
   return(
     <div id={styles["page-content"]} className="w-100 relative" >
-      <div ref={props.heroObserver} className="bg-primary wrapper" id={styles.inicio}>
+      <div ref={props.heroObserver} className="bg-primary wrapper" id="inicio">
         <div className="w-100 container-fluid px-0">
           <div className="row py-0 px-0 mx-0 mb-0">
             <div id={styles["home"]} className="col-md-12 px-0 py-0 d-flex justify-content-center align-items-center flex-column relative" >
@@ -209,8 +209,8 @@ const HomePage = props => {
             <div className={`${styles["img-container"]} next-image-reset`}>
               <Image layout="fill" objectFit="cover" alt="Sede da Cavtio" 
                 className= "img-fluid d-block mx-auto" 
-                src="/static/images/quem-somos/front.jpg"
-                sizes="(max-width: 360px) 98vw, (max-width: 450px) 75vw, (max-width: 600px) 30vw, (max-width: 767px) 45vw, 26vw "/>
+                src="/images/quem-somos/front.jpg"
+                sizes="(max-width: 360px) 98vw, (max-width: 450px) 75vw, (max-width: 600px) 30vw, (max-width: 767px) 45vw, 30vw "/>
             </div>
           </div>
           <div className="col-md-6 mb-3 px-4">
@@ -222,7 +222,7 @@ const HomePage = props => {
         </div> 
       </div>
     </div>
-    <div id="nossos-produtos" className="py-5 text-white bg-light wrapper"  >
+    <div id="nossas-acoes" className="py-5 text-white bg-light wrapper"  >
      <div className="container px-1">
       <div className="row mb-4">
         <div className="col-md-12 text-center mx-3">
