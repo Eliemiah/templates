@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+$theme-colors: (
+  "primary": rgb(0, 122, 122),
+  "secondary": rgb(249, 149, 98)
+);
+
+@import 'bootstrap/scss/bootstrap.scss';
+
+@import "../../components/globalMixins/globalMixins";
+
+$body-width: 100vw;
+$body-height: 100vh;
+$grey: rgb(120 120 120);
+
+body{
+    width: $body-width;
+    height: $body-height;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif !important;
+}
+.relative{
+    position: relative !important;
+}
+.text-grey{
+    color: $grey;
+}
+
+.next-image-reset {
+    > span {
+         display: unset  !important;
+         width: 100% !important;
+         height: 100% !important;
+         position: unset !important;
+         
+         > span {
+             position:unset !important;
+             display: unset !important;
+         }
+         img{
+             width: 100% !important;
+             height: 100% !important;
+             max-width: unset !important;
+             min-width: unset !important;
+             max-height: unset !important;
+             min-height: unset !important;
+             position: unset !important; 
+         }
+    } 
+ }
+
+footer{
+    
+    .logo-outer{
+        width: 10rem;
+    }
+}
+@include min576-max767(){
+    footer{
+        .footer-btn{
+            margin-top: 4rem;
+        }
+    }
+}
