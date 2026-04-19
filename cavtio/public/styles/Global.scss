@@ -17,10 +17,10 @@ body{
     width: $body-width;
     height: $body-height;
     overflow-x: hidden;
-    font-family: 'Montserrat', sans-serif !important;
+    font-family: 'Montserrat', sans-serif;
 }
 .relative{
-    position: relative !important;
+    position: relative;
 }
 .text-grey{
     color: $grey;

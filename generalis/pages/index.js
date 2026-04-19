@@ -39,7 +39,8 @@ const Home = props => {
           </div>
           <div className="col-md-6 px-0">
             <div className="img-container-layout-fill relative">
-              <Image src={nossasImagesBG} placeholder='blur' layout="fill" objectFit="cover" quality={95} priority 
+              <Image src={nossasImagesBG} placeholder='blur' layout="fill" objectFit="cover" quality={95} 
+                loading="lazy"
                 width={2000} height={1500}/>
             </div>
           </div>
@@ -53,9 +54,8 @@ const Home = props => {
                 className={`py-3 ml-3 relative d-flex flex-row w-100 text-white ps-2 ${id === itemClicked ? "active  " : ""}`}
                   onClick={() => {
                     setItemToClicked(id)
-                    document.getElementById("list-content").scrollIntoView()
                   }}>
-                  <span className="item-text d-flex align-items-center">{name}</span>
+                  <a href={`#${id}`} className="item-text d-flex align-items-center text-white text-decoration-none w-100 h-100">{name}</a>
               </li>))}
             </ul>
           </div>
@@ -91,7 +91,8 @@ const Home = props => {
           </div>
           <div className="col-md-6 px-0">
             <div id="img-1" className="bg-primary relative img-container-layout-fill">
-              <Image src={nossasImagesBG} placeholder='blur' layout="fill" objectFit="cover" quality={95} priority 
+              <Image src={nossasImagesBG} placeholder='blur' layout="fill" objectFit="cover" quality={95} 
+                loading="lazy"
                 width={1600} height={800}/>
             </div>
           </div>

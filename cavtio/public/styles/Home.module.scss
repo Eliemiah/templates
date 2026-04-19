@@ -12,7 +12,7 @@ $viewport-height: 100vh;
     $hero-primary-color:  #a2415e;
 
     width: $viewport-width;
-    height: $viewport-height;
+    height: 100dvh;
     
     #hero-bg{
         filter: brightness(0.8);

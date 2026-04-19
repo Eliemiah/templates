@@ -140,6 +140,18 @@ body{
 button:focus{
     outline: none !important;}
 
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 #page-content{
     scroll-behavior: smooth;
     position: absolute;

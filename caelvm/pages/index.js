@@ -106,8 +106,8 @@ const HomePage = (props) => {
         <div className="row py-0 px-0 mx-0 mb-0 top-space">
           <div className="col-md-12 px-0 py-0 d-flex justify-content-center align-items-center flex-column" id="home">
             <div id="hero-bg">
-              <Image src={heroImage} placeholder='blur'
-                layout="fill" objectFit="cover" quality={95} priority/>
+              <Image src={heroImage} placeholder='blur' alt="Seguro Caelvm"
+                layout="fill" objectFit="cover" quality={95} priority />
             </div>
             <div id="hero-content" className="d-flex flex-column justify-content-center align-items-center text-center">
               <h1 className="text-white mx-2"><strong>Protegemos o seu patrimônio para você ficar tranquilo</strong></h1>
@@ -130,7 +130,13 @@ const HomePage = (props) => {
                 <h1 className="text-secondary">NOSSOS PRODUTOS</h1>
               </div>
             </div>
-            <>{printOurServices(ourServices)}</>
+            <div className="services-grid">
+              {ourServices.map((item, index) => (
+                <div key={index} className="mt-1">
+                  <CustomCard item={item} index={index}/>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -226,19 +232,19 @@ const HomePage = (props) => {
               </div>
               <div className="row d-flex flex-row px-2 justify-content-center align-items-center">
                 <div className="my-2 col-12 col-sm-12 col-md-12 col-lg-12 d-flex" >
-                  <h3 className="d-flex flex-row justify-content-center align-items-center" >(71) 99123-0000&nbsp;&nbsp;<i className="fa fa-whatsapp fa-lg" aria-hidden="true">&nbsp;&nbsp;</i></h3>
+                  <h3 className="d-flex flex-row justify-content-center align-items-center" >(71) 99123-0000&nbsp;&nbsp;<i className="fa fa-whatsapp fa-lg" aria-hidden="true" aria-label="WhatsApp">&nbsp;&nbsp;</i></h3>
                 </div>
               </div>
             </div>
             <div className="col-md-6 d-flex my-3 flex-column">
               <div className="row d-flex flex-row px-2 justify-content-center align-items-center">
                 <div className="my-2 col-12 col-sm-12 col-md-12 col-lg-12 d-flex" >
-                  <h3 className="d-flex flex-row justify-content-center align-items-center"><i className="fa fa-facebook-official fa-lg" aria-hidden="true">&nbsp;</i>/empresa.xyz</h3>
+                  <h3 className="d-flex flex-row justify-content-center align-items-center"><i className="fa fa-facebook-official fa-lg" aria-hidden="true" aria-label="Facebook">&nbsp;</i>/empresa.xyz</h3>
                 </div>
               </div>
               <div className="row d-flex flex-row px-2 justify-content-center align-items-center">
                 <div className="my-2 col-12 col-sm-12 col-md-12 col-lg-12 d-flex" >
-                  <h3 className="d-flex flex-row justify-content-center align-items-center"><i className="fa fa-instagram fa-lg" aria-hidden="true">&nbsp;</i>/empresa.xyz</h3>
+                  <h3 className="d-flex flex-row justify-content-center align-items-center"><i className="fa fa-instagram fa-lg" aria-hidden="true" aria-label="Instagram">&nbsp;</i>/empresa.xyz</h3>
                 </div>
               </div>
             </div>
